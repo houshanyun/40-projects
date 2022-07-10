@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,500&display=swap');
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+*, 
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Flex', sans-serif;
+}
+
+.app {
+  width: 500px;
+  height: auto;
+  padding: 1rem 0.5rem;
+  text-align: center;
+}
+
+.wrapper {
+  & > h1 {
+    color: #273c75;
+    font-size: 5em;
+  }
+  & > .count {
+    padding: .3em 0;
+    color: #2f3640;
+    font-size: 5em;
+  }
+  & .btn {
+    width: 120px;
+    padding: .5em 0;
+    background-color: #fff;
+    border: 1px solid #2f3640;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .5s;
+  }
+  & .btn:hover {
+    color: #fff;
+    background-color: #2f3640;
+  }
+  & .btn:not(:last-child) {
+    margin-right: 15px;
+  }
+}
+

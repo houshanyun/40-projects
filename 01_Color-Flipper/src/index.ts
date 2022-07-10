@@ -4,7 +4,6 @@ const main = document.querySelector('.main') as HTMLElement
 const btn = document.querySelector('.btn') as HTMLButtonElement
 const colorDefault = document.querySelector('.color-default') as HTMLSpanElement
 const simple = document.querySelector('.simple') as HTMLSpanElement
-
 simple.style.color = '#0af'
 
 const changeColor = () => {
