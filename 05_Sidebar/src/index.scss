@@ -1,0 +1,119 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  overflow: hidden;
+  width: 100vw;
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
+ul {
+  list-style-type: none;
+}
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  .hamburger {
+    padding: 2rem 3rem;
+    color: #0af;
+    font-size: 3em;
+    cursor: pointer;
+    animation: changeSize 2s linear infinite alternate;
+  }
+}
+
+.aside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 100vh;
+  //padding: 2rem;
+  background-color: #fff;
+  z-index: 99;
+  transform: translateX(-100%);
+  transition: transform 1s ease-in-out;
+  &.active {
+    transform: translateX(0);
+  }
+  & .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    font-size: 1.2em;
+    & > h1 > span {
+      color: #0abde3;
+    }
+    & .close {
+      color: red;
+      font-size: 2em;
+      cursor: pointer;
+      transform: rotate(0);
+      transition: 1s linear;
+      &:hover {
+        transform: rotate(2turn);
+      }
+    }
+  }
+  & .item-list {
+    & .item {
+      padding: 1.7rem 2rem;
+      color: #8395a7;
+      font-size: 2em;
+      transition: .5s;
+      &:hover {
+        background-color: #54a0ff;
+        color: #48dbfb;
+      }
+    }
+  }
+  & .icon-list {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 1.7rem 2rem;
+    & .icon {
+      padding: 0 1.5rem;
+      color: #0abde3;
+      font-size: 2em;
+      transition: color .3s linear;
+      &:hover {
+        color: #341f97;
+      }
+    }
+  }
+}
+
+@keyframes changeSize {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes animationClose {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(2turn);
+  }
+}
