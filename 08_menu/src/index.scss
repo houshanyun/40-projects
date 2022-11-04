@@ -4,11 +4,126 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+  max-width: 1100px;
+  margin: auto;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+ul {
   list-style-type: none;
 }
 
 img {
+  display: block;
   width: 100%;
-  height: auto;
-  vertical-align: middle;
+  height: 200px;
+  object-fit: cover;
+  border: 3px solid #fa0;
+  border-radius: 5px;
+}
+
+.page-title {
+  position: relative;
+  padding-top: 3rem;
+  color: #444;
+  font-size: 2.5em;
+  text-align: center;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: calc(50% - 35px);
+    display: block;
+    width: 70px;
+    height: 3px;
+    background-color: #fa0;
+  }
+}
+
+.nav {
+  padding: 2rem 0;
+  & .nav-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & .item {
+      padding: 6px 10px;
+      border-radius: 5px;
+      box-shadow: 2px 2px 1px 0.8px #aaa, -2px -2px 1px 0.8px #fa0;
+      cursor: pointer;
+      transition: all 0.3s linear;
+    }
+    & .item:hover {
+      background-color: #fa0;
+      color: #fff;
+    }
+    & .item:not(:first-of-type) {
+      margin-left: 1.5rem;
+    }
+  }
+}
+
+.wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem 1rem;
+  transition: all 0.5s ease-in-out;
+}
+
+.product {
+  width: 350px;
+  margin: auto;
+  padding: 1rem 1rem 1.5rem 1rem;
+  & .product-title {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #aaa;
+    color: #333;
+    text-transform: capitalize;
+    & .product-price {
+      color: #fa3;
+    }
+  }
+  & .product-description {
+    padding: 10px 0;
+    color: #888;
+  }
+}
+@media screen and (min-width: 800px) {
+  .wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.7rem 0.7rem;
+    & .product {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 1rem;
+      width: 600px;
+    }
+  }
+  img {
+    height: 175px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem 0.7rem;
+    & .product {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 1rem;
+      width: 600px;
+    }
+  }
+  img {
+    height: 150px;
+  }
 }

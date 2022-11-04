@@ -1,7 +1,7 @@
 import "./index.scss";
 import menu from "./app";
 
-const product = document.querySelector(".product") as HTMLElement;
+const wrap = document.querySelector(".wrap") as HTMLElement;
 const photo = document.querySelector(".photo") as HTMLElement;
 const name = document.querySelector(".product-name") as HTMLElement;
 const price = document.querySelector(".product-price") as HTMLElement;
@@ -16,6 +16,8 @@ type Obj = {
 };
 let displayItem = menu.map((items: Obj): string => {
   return `
+
+      <section class="product">
         <figure class="product-photo">
           <img class="photo" src=${items.img} alt="" />
         </figure>
@@ -27,7 +29,7 @@ let displayItem = menu.map((items: Obj): string => {
           <div class="product-description">
             <p class="product-text">${items.desc}</p>
           </div>
-        </article>`;
+        </article></section>`;
 });
 const displayContent: string = displayItem.join("");
-product.innerHTML = displayContent;
+wrap.innerHTML = displayContent;
