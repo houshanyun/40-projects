@@ -2,10 +2,6 @@ import "./index.scss";
 import menu from "./app";
 
 const wrap = document.querySelector(".wrap") as HTMLElement;
-const photo = document.querySelector(".photo") as HTMLElement;
-const name = document.querySelector(".product-name") as HTMLElement;
-const price = document.querySelector(".product-price") as HTMLElement;
-const text = document.querySelector(".product-text") as HTMLElement;
 type Obj = {
   id: number;
   title: string;
@@ -16,7 +12,6 @@ type Obj = {
 };
 let displayItem = menu.map((items: Obj): string => {
   return `
-
       <section class="product">
         <figure class="product-photo">
           <img class="photo" src=${items.img} alt="" />
@@ -29,7 +24,8 @@ let displayItem = menu.map((items: Obj): string => {
           <div class="product-description">
             <p class="product-text">${items.desc}</p>
           </div>
-        </article></section>`;
+        </article>
+      </section>`;
 });
 const displayContent: string = displayItem.join("");
 wrap.innerHTML = displayContent;
