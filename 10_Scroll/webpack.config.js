@@ -15,7 +15,7 @@ module.exports = {
     //靜態資源存在的資料夾
     //設定錯誤可能會找不到本地圖片
     static: {
-      directory: path.join(__dirname, "src"),
+      directory: path.join(__dirname, "src/pic"),
     },
     port: 3000,
     open: true,
@@ -39,7 +39,12 @@ module.exports = {
       {
         test: /\.ts?$/,
         exclude: /node_modules/,
-        use: ["babel-loader", "ts-loader"],
+        use: [
+          "babel-loader",
+          {
+            loader: "ts-loader",
+          },
+        ],
       },
     ],
   },

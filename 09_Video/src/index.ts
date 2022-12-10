@@ -1,8 +1,8 @@
 import "./index.scss";
 
-const preloader = document.querySelector(".preloader");
-const btn = document.querySelector(".switch-btn");
-const video = document.querySelector(".video-bg") as HTMLVideoElement; /* ; */
+const preloader = document.querySelector(".preloader") as HTMLDivElement;
+const btn = document.querySelector(".switch-btn") as HTMLButtonElement;
+const video = document.querySelector(".video-bg") as HTMLVideoElement;
 
 window.addEventListener("load", () => {
   preloader?.classList.add("gif-hidden");

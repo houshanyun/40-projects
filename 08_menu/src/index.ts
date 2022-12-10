@@ -2,6 +2,7 @@ import "./index.scss";
 import menu from "./app";
 
 const wrap = document.querySelector(".wrap") as HTMLElement;
+
 type Obj = {
   id: number;
   title: string;
